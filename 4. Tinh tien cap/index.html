@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bài tập 4</title>
+
+  <!-- TAILWIND -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- FLOWBITE CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body class="p-6 bg-gradient-to-tr from-pink-200 via-teal-100 to-purple-200">
+  <div class="flex justify-between">
+    <!-- LEFT -->
+    <div class="w-[40%]">
+      <h1 class="text-[#2C256B] text-6xl font-bold">BÀI TẬP 4:</h1>
+      <p class="text-[#2C256B] text-5xl font-bold mt-3">TÍNH TIỀN CÁP</p>
+
+      <!-- Nội dung -->
+      <div class="mt-6">
+        <p class="text-[35px] font-bold text-blue-700">1. Nhà dân:</p>
+        <ul class="list-disc list-inside text-gray-800 ml-4">
+          <li class="text-[25px]">
+            Phí xử lý hóa đơn:
+            <span class="text-red-600 font-semibold">$4.5</span>
+          </li class="text-[25px]">
+          <li class="text-[25px]">
+            Phí dịch vụ cơ bản:
+            <span class="text-green-600 font-semibold">$20.5</span>
+          </li class="text-[25px]">
+          <li class="text-[25px]">
+            Thuê kênh cao cấp:
+            <span class="text-purple-600 font-semibold">$7.5</span> / kênh
+          </li class="text-[25px]">
+        </ul>
+
+        <p class="text-[35px] font-bold text-blue-700 mt-6">2. Doanh nghiệp:</p>
+        <ul class="list-disc list-inside text-gray-800 ml-4">
+          <li class="text-[25px]">
+            Phí xử lý hóa đơn:
+            <span class="text-red-600 font-semibold">$15</span>
+          </li class="text-[25px]">
+          <li class="text-[25px]">
+            Phí dịch vụ cơ bản:
+            <span class="text-green-600 font-semibold">$75</span> cho tổng 10
+            kết nối đầu, mỗi kết nối thêm
+            <span class="text-orange-600 font-semibold">$5</span> / kết nối
+          </li class="text-[25px]">
+          <li class="text-[25px]">
+            Thuê kênh cao cấp:
+            <span class="text-purple-600 font-semibold">$50</span> / kênh
+          </li class="text-[25px]">
+        </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="w-[60%] px-20">
+      <div class="bg-white rounded-2xl shadow-2xl p-6 space-y-6">
+        <h1 class="text-3xl font-extrabold text-center text-blue-600 tracking-wide">
+          Hóa đơn dịch vụ cáp
+        </h1>
+
+        <!-- Mã khách hàng -->
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1">Mã khách hàng</label>
+          <input type="text" id="maKhachHang" placeholder="Nhập mã khách hàng"
+            class="w-full rounded-xl border-2 border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition" />
+        </div>
+
+        <!-- Loại khách hàng -->
+        <div>
+          <p class="block text-sm font-semibold text-gray-700 mb-1">Loại khách hàng</p>
+
+          <input type="radio" id="rd-nhaDan" name="loaiNha" onchange="so_Ket_Noi_Disabled('rd-nhaDan')">
+          <label for="rd-nhaDan">Nhà dân</label>
+
+          <input type="radio" id="rd-doanhNghiep" name="loaiNha" onchange="so_Ket_Noi_Disabled('rd-doanhNghiep')">
+          <label for="rd-doanhNghiep">Doanh nghiệp</label>
+
+        </div>
+
+        <!-- Số kết nối -->
+        <div id="ketNoiGroup">
+          <label class="block text-sm font-semibold text-gray-700 mb-1">Số kết nối</label>
+          <input type="number" id="so_Ket_Noi" placeholder="Nhập số kết nối"
+            class="w-full rounded-xl border-2 border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition" />
+        </div>
+
+        <!-- Số kênh cao cấp -->
+        <div>
+          <label class="block text-sm font-semibold text-gray-700 mb-1">Số kênh cao cấp</label>
+          <input type="number" id="kenh_Cao_Cap" placeholder="Nhập số kênh cao cấp"
+            class="w-full rounded-xl border-2 border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400 transition" />
+        </div>
+
+        <!-- Button -->
+        <button type="submit" onclick="tinh_Hoa_Don(event)"
+          class="w-full bg-orange-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl shadow-lg transition duration-500 transform hover:scale-105">
+          Tính hóa đơn
+        </button>
+
+        <!-- Kết quả -->
+        <div id="show_ketQua"
+          class="mt-4 p-4 bg-blue-50 rounded-xl text-center text-4xl font-semibold text-emerald-700 shadow-inner"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

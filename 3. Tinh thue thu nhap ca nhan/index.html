@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bài tập 3</title>
+
+  <!-- TAILWIND -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- FLOWBITE CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-[#1D649C] p-10 font-sans">
+  <h1 class="text-center text-white text-5xl font-extrabold mb-10 tracking-wide drop-shadow-lg">
+    BÀI TẬP 3: TÍNH THUẾ THU NHẬP CÁ NHÂN
+  </h1>
+  <div class="flex justify-between items-start bg-white shadow-2xl rounded-2xl overflow-hidden">
+    <!-- LEFT ITEM -->
+    <div class="text-black flex flex-col items-center w-2/3 p-8">
+      <h2 class="text-4xl mb-6 font-bold text-gray-800">Bảng thuế suất</h2>
+
+      <!-- BẢNG THUẾ SUẤT -->
+      <table class="text-xl w-[85%] border-collapse shadow-lg rounded-lg overflow-hidden">
+        <thead class="bg-red-200 text-black">
+          <tr>
+            <th class="border px-5 py-3">Thu nhập chịu thuế (triệu)</th>
+            <th class="border px-5 py-3">Thuế suất (%)</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="bg-blue-100">
+            <td class="border px-5 py-3">Đến 60</td>
+            <td class="border px-5 py-3 text-center">5</td>
+          </tr>
+
+          <tr class="bg-white">
+            <td class="border px-5 py-3">Trên 60 đến 120</td>
+            <td class="border px-5 py-3 text-center">10</td>
+          </tr>
+
+          <tr class="bg-blue-100">
+            <td class="border px-5 py-3">Trên 120 đến 210</td>
+            <td class="border px-5 py-3 text-center">15</td>
+          </tr>
+
+          <tr class="bg-white">
+            <td class="border px-5 py-3">Trên 210 đến 384</td>
+            <td class="border px-5 py-3 text-center">20</td>
+          </tr>
+
+          <tr class="bg-blue-100">
+            <td class="border px-5 py-3">Trên 384 đến 624</td>
+            <td class="border px-5 py-3 text-center">25</td>
+          </tr>
+
+          <tr class="bg-white">
+            <td class="border px-5 py-3">Trên 624 đến 960</td>
+            <td class="border px-5 py-3 text-center">30</td>
+          </tr>
+
+          <tr class="bg-blue-100">
+            <td class="border px-5 py-3">Trên 960</td>
+            <td class="border px-5 py-3 text-center">35</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- RIGHT ITEM -->
+    <form class="p-8 bg-gray-600 w-1/3 text-white rounded-r-2xl">
+      <div class="flex flex-col">
+        <!-- NHẬP SỐ KM -->
+        <h2 class="text-3xl font-medium mb-3">Họ và Tên</h2>
+        <input type="text" id="txt-Name" class="text-black font-bold bg-white text-2xl" />
+
+        <h2 class="text-3xl font-medium mt-8 mb-3">Tổng thu nhập năm</h2>
+        <div class="flex items-center">
+          <input type="number" name="Number" id="txt-Thu_Nhap" class="w-[60%] text-black font-bold bg-white text-2xl" />
+          <p class="ml-5 text-2xl font-medium">triệu VNĐ</p>
+        </div>
+
+        <h2 class="text-3xl font-medium mt-8 mb-3">Số người phụ thuộc</h2>
+        <div class="flex items-center">
+          <input type="number" name="Number" id="txt-People" class="w-full text-black font-bold bg-white text-2xl" />
+        </div>
+
+        <button id="btn-TinhThue" onclick="tinh_Thue(event)"
+          class="text-white font-bold border-none p-2 mt-8 bg-[#68CA7D] hover:bg-pink-400 hover:text-black w-[50%] mx-auto transition duration-500 cursor-pointer">
+          TÍNH THUẾ
+        </button>
+
+        <h2 class="text-3xl font-medium mt-8 mb-3">Thuế thu nhập cá nhân</h2>
+        <div class="flex items-center">
+          <p id="show_Result" class="text-yellow-300 text-[40px] font-bold"></p>
+          <p class="text-yellow-300 text-[40px] font-bold ml-3">triệu VND</p>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <!-- MAIN JS -->
+  <script src="./js/main.js"></script>
+
+  <!-- FLOWBITE JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bài tập 1</title>
+
+  <!-- TAILWIND -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- FLOWBITE CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-rose-50 p-8 font-sans text-gray-700">
+  <h1 class="text-center text-4xl md:text-5xl font-extrabold mb-8 text-gray-800 tracking-wide">
+    BÀI TẬP 1: QUẢN LÝ TUYỂN SINH
+  </h1>
+
+  <div class="flex flex-col md:flex-row gap-6">
+    <!-- LEFT ITEM -->
+    <form class="flex-1 bg-green-200 backdrop-blur-md shadow-md rounded-2xl p-8 border border-gray-200">
+      <div class="flex flex-col space-y-6">
+        <!-- NHẬP SỐ ĐIỂM CHUẨN -->
+        <div>
+          <h2 class="text-lg font-bold mb-2 text-gray-600">Điểm chuẩn hội đồng</h2>
+          <input type="number" id="txt-Diem_Chuan"
+            class="w-full p-3 rounded-xl border border-gray-300 text-lg focus:ring-2 focus:ring-orange-300 focus:border-orange-300" />
+        </div>
+
+        <!-- NHẬP ĐIỂM 3 MÔN THÍ SINH -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <h2 class="text-lg font-bold mb-2 text-gray-600">Môn thứ 1</h2>
+            <input type="number" id="txt-Toan"
+              class="w-full p-3 rounded-xl border border-gray-300 text-lg focus:ring-2 focus:ring-orange-200 focus:border-orange-300" />
+          </div>
+
+          <div>
+            <h2 class="text-lg font-bold mb-2 text-gray-600">Môn thứ 2</h2>
+            <input type="number" id="txt-Van"
+              class="w-full p-3 rounded-xl border border-gray-300 text-lg focus:ring-2 focus:ring-orange-200 focus:border-orange-300" />
+          </div>
+
+          <div>
+            <h2 class="text-lg font-bold mb-2 text-gray-600">Môn thứ 3</h2>
+            <input type="number" id="txt-Anh"
+              class="w-full p-3 rounded-xl border border-gray-300 text-lg focus:ring-2 focus:ring-orange-200 focus:border-orange-300" />
+          </div>
+        </div>
+
+        <!-- KHU VỰC -->
+        <div>
+          <h2 class="text-lg font-bold mb-2 text-gray-600">Khu vực</h2>
+          <input type="text" id="txt-Khu-Vuc"
+            class="w-full p-3 rounded-xl border border-gray-300 text-lg focus:ring-2 focus:ring-orange-200 focus:border-orange-300"
+            placeholder="Nhập X nếu không phải khu vực ưu tiên." />
+        </div>
+
+        <!-- ĐỐI TƯỢNG ƯU TIÊN -->
+        <div>
+          <h2 class="text-lg font-bold mb-2 text-gray-600">Đối tượng</h2>
+          <input type="number" id="txt-Doi_Tuong"
+            class="w-full p-3 rounded-xl border border-gray-300 text-lg focus:ring-2 focus:ring-orange-200 focus:border-orange-300"
+            placeholder="Nhập 0 nếu không thuộc đối tượng ưu tiên." />
+        </div>
+
+        <button id="btn-Tinhtien" onclick="tra_Diem(event)"
+          class="mt-6 bg-pink-300 text-gray-800 font-semibold py-3 rounded-xl hover:bg-pink-400 transition duration-300 shadow">
+          TRA ĐIỂM
+        </button>
+      </div>
+    </form>
+
+    <!-- RIGHT ITEM -->
+    <div class="flex-1 bg-green-200 backdrop-blur-md shadow-md rounded-2xl p-8 border border-gray-200">
+      <h2 class="text-xl font-bold mb-4 text-gray-600">Kết quả điểm:</h2>
+      <div id="show_Grade_Result" class="text-3xl font-bold text-pink-500"></div>
+
+      <h2 class="text-xl font-bold mt-8 mb-4 text-gray-600">Kết quả trúng tuyển:</h2>
+      <div id="show_Final_Result" class="text-3xl font-bold text-emerald-600"></div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <!-- MAIN JS -->
+  <script src="./js/main.js"></script>
+
+  <!-- FLOWBITE JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+</body>
+
+</html>
